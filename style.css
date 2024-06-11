@@ -1,5 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
+#card {
+   height: 500px;
+   width: 800px;
+   margin: 5em auto;
+   position: fixed;
+   top: -15px;
+   left: 25%;
+   display: flex;
+   visibility: hidden;
+}
+#card h2 {
+   font-size: 3em;
+   margin: 0;
+   color: pink;
+   text-align: center;
+}
+#card p {
+   font-size: 1.5em;
+   text-align: justify;
+   padding-left: 30px; /* Espacio en blanco a la izquierda */
+   padding-right: 30px; /* Espacio en blanco a la derecha */
+}
+
+.side {
+   background: #eee;
+   height: 550px;
+   width: 400px;
+   padding: 10px;
+}
+.side.one {
+   width: 320px;
+   transform: skew(10deg, 20deg);
+   background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
+}
+.side.two {
+   transform: skew(10deg, -15deg);
+   background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
+
 body {
    display: flex;
    align-items: center;
@@ -8,179 +47,204 @@ body {
    font-family: 'Sacramento', cursive;
    background-color: #f1e3d3;
    overflow: hidden;
-   font-size: 1rem;
-   margin: 0;
 }
 
 .valentines-day {
    position: relative;
    cursor: pointer;
-   width: 60vw;
-   max-width: 300px;
-   height: 60vw;
-   max-height: 300px;
-}
-
-.envelope, .heart, .front, .text {
-   position: absolute;
 }
 
 .envelope {
+   position: relative;
    filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
-   width: 100%;
-   height: 100%;
+}
+
+.envelope:before {
+   content: "";
+   position: absolute;
+   width: 254px;
+   height: 254px;
    background-color: #ff9494;
    transform: rotate(-45deg);
-   border-radius: 15px 15px 0 0;
+   border-radius: 0 15px 0 0;
+   left: -37px;
+   top: -82px;
+}
+
+.envelope:after {
+   content: "";
+   position: absolute;
+   background-color: #ff9494;
+   width: 360px;
+   height: 225px;
+   left: -90px;
+   top: 45px;
 }
 
 .heart {
-   top: 20%;
-   left: 20%;
-   width: 60%;
-   height: 60%;
+   position: relative;
    background-color: #e01911;
+   display: inline-block;
+   height: 180px;
+   top: 50px;
+   left: 0;
    transform: rotate(-45deg);
-   border-radius: 50% 50% 0 0;
+   width: 180px;
+   filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3));
    transition: .5s;
 }
 
 .heart:before, .heart:after {
    content: "";
-   position: absolute;
-   width: 100%;
-   height: 100%;
    background-color: #e01911;
    border-radius: 50%;
+   height: 180px;
+   width: 180px;
+   position: absolute;
 }
 
 .heart:before {
-   top: -50%;
+   top: -100px;
    left: 0;
 }
 
 .heart:after {
+   left: 100px;
    top: 0;
-   left: 50%;
 }
 
 .front {
-   top: 20%;
-   left: 20%;
-   width: 60%;
-   height: 60%;
-   border-right: 15px solid #fbd2d2;
-   border-top: 15px solid transparent;
-   border-bottom: 15px solid transparent;
-   z-index: 2;
-}
-
-.front:before, .front:after {
-   content: "";
    position: absolute;
+   width: 0;
+   height: 0;
+   border-right: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top: 44px;
+   left: 80px;
+   z-index: 4;
 }
 
 .front:before {
-   top: -50%;
-   left: 0;
+   content: "";
+   position: absolute;
    width: 0;
    height: 0;
-   border-left: 15px solid #fbd2d2;
-   border-top: 15px solid transparent;
-   border-bottom: 15px solid transparent;
+   border-left: 190px solid #fbd2d2;
+   border-top: 113px solid transparent;
+   border-bottom: 113px solid transparent;
+   top: -113px;
+   left: -170px;
 }
 
 .front:after {
-   top: 0;
-   left: 50%;
    width: 0;
    height: 0;
-   border-bottom: 20px solid #fce7e9;
-   border-right: 15px solid transparent;
-   border-left: 15px solid transparent;
+   position: absolute;
+   content: "";
+   border-bottom: 150px solid #fce7e9;
+   border-right: 180px solid transparent;
+   border-left: 180px solid transparent;
+   top: -36px;
+   left: -170px;
 }
 
 .text {
-   top: 20%;
-   left: 25%;
-   width: 50%;
-   height: 60%;
+   position: absolute;
+   font-family: arial;
+   letter-spacing: 5px;
    text-align: center;
    color: white;
-   font-size: 1.5rem;
-   z-index: 1;
-   transform: rotate(45deg);
+   z-index: 2;
+   top: 80px;
+   left: 15px;
    transition: .5s;
 }
 
 .valentines-day:hover .heart {
-   transform: translateY(-20%) rotate(-45deg);
+   transform: translateY(-50px) rotate(-45deg);
 }
 
 .valentines-day:hover .text {
-   transform: translateY(-20%) rotate(45deg);
+   transform: translateY(-50px);
 }
 
-#card {
-   visibility: hidden;
-   position: fixed;
-   top: 10%;
-   left: 50%;
-   transform: translateX(-50%);
-   width: 80vw;
-   max-width: 600px;
-   height: 70vh;
-   max-height: 400px;
-   display: flex;
-   flex-direction: column;
-   background: #fff;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   border-radius: 10px;
-   overflow: hidden;
-}
-
-#card h2 {
-   font-size: 2.5rem;
-   margin: 0;
-   color: #ff66b2;
-   text-align: center;
-   padding: 1rem;
-   background: #fff;
-}
-
-#card p {
-   font-size: 1rem;
-   text-align: justify;
-   padding: 1rem;
-   margin: 0;
-}
-
-.side {
-   height: 100%;
-   padding: 10px;
-}
-
-.side.one {
-   background: linear-gradient(90deg, #fff, #ddd);
-}
-
-.side.two {
-   background: linear-gradient(-90deg, #fff, #f0f0f0);
-}
-
-@media (max-width: 600px) {
-   body {
-      font-size: 0.8rem;
-   }
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
    #card {
-      width: 90vw;
-      height: auto;
-      top: 5%;
+      width: 90%;
+      left: 5%;
+      top: 20px;
+   }
+   .side {
+      width: 100%;
+   }
+   .side.one {
+      transform: skew(0deg, 0deg);
+   }
+   .side.two {
+      transform: skew(0deg, 0deg);
    }
    #card h2 {
-      font-size: 1.5rem;
+      font-size: 2em;
    }
    #card p {
-      font-size: 0.8rem;
+      font-size: 1.2em;
+      padding-left: 10px;
+      padding-right: 10px;
+   }
+}
+
+@media (max-width: 768px) {
+   #card {
+      height: auto;
+   }
+   .side {
+      height: auto;
+      padding: 20px;
+   }
+   .envelope:before,
+   .envelope:after,
+   .heart {
+      width: 120px;
+      height: 120px;
+   }
+   .heart:before,
+   .heart:after {
+      width: 120px;
+      height: 120px;
+   }
+   .front {
+      border-right: 120px solid #fbd2d2;
+      border-top: 70px solid transparent;
+      border-bottom: 70px solid transparent;
+   }
+   .front:before {
+      border-left: 120px solid #fbd2d2;
+      border-top: 70px solid transparent;
+      border-bottom: 70px solid transparent;
+   }
+   .front:after {
+      border-bottom: 100px solid #fce7e9;
+      border-right: 120px solid transparent;
+      border-left: 120px solid transparent;
+   }
+   .text {
+      top: 50px;
+      left: 5px;
+   }
+}
+
+@media (max-width: 480px) {
+   body {
+      font-size: 14px;
+   }
+   #card h2 {
+      font-size: 1.5em;
+   }
+   #card p {
+      font-size: 1em;
+      padding-left: 5px;
+      padding-right: 5px;
    }
 }
