@@ -1,45 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Sacramento');
 
-#card {
-   height:500px;
-   width:800px;
-   margin:5em auto;
-   position: fixed;
-  top: -15px;
-   left: 25%;
-   display:flex;
-   visibility:hidden;
-}
-#card h2 {
-   font-size:3em;
-   margin:0;
-   color:pink;
-   text-align: center;
-}
-#card p {
-   font-size: 1.5em;
-   text-align: justify;
-   padding-left: 30px; /* Espacio en blanco a la izquierda */
-   padding-right: 30px; /* Espacio en blanco a la derecha */
-}
-
-.side {
-   background:#eee;
-   height:550px;
-   width:400px;
-/*    border:1px solid red; */
-   padding:10px;
-}
-.side.one {
-   width:320px;
-   transform:skew(10deg,20deg);
-   background:linear-gradient(90deg, #fff, #fff 40%, #ddd);
-}
-.side.two {
-   transform:skew(10deg,-15deg);
-   background:linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
-}
-
 body {
    display: flex;
    align-items: center;
@@ -48,122 +8,168 @@ body {
    font-family: 'Sacramento', cursive;
    background-color: #f1e3d3;
    overflow: hidden;
- }
- 
- .valentines-day {
+   font-size: 1rem; /* Base para escalado */
+}
+
+#card {
+   height: 62.5vh; /* Proporcional a la altura de la ventana */
+   width: 50vw; /* Proporcional al ancho de la ventana */
+   margin: 5em auto;
+   position: fixed;
+   top: -15px;
+   left: 25%;
+   display: flex;
+   visibility: hidden;
+}
+
+#card h2 {
+   font-size: 3em;
+   margin: 0;
+   color: pink;
+   text-align: center;
+}
+
+#card p {
+   font-size: 1.5em;
+   text-align: justify;
+   padding-left: 30px; /* Espacio en blanco a la izquierda */
+   padding-right: 30px; /* Espacio en blanco a la derecha */
+}
+
+.side {
+   background: #eee;
+   height: 100%;
+   width: 50%;
+   padding: 10px;
+}
+
+.side.one {
+   transform: skew(10deg, 20deg);
+   background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
+}
+
+.side.two {
+   transform: skew(10deg, -15deg);
+   background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
+
+.valentines-day {
    position: relative;
    cursor: pointer;
- }
- 
- .envelope {
+}
+
+.envelope {
    position: relative;
-   filter: drop-shadow(0 0 25px rgba(0,0,0,.3));
- }
- 
- .envelope:before {
-   content:"";
+   filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3));
+}
+
+.envelope:before {
+   content: "";
    position: absolute;
-   width:254px;
-   height:254px;
+   width: 16vw;
+   height: 16vw;
    background-color: #ff9494;
    transform: rotate(-45deg);
    border-radius: 0 15px 0 0;
-   left:-37px;
-   top:-82px;
- }
- 
- .envelope:after {
-   content:"";
+   left: -6vw;
+   top: -6vw;
+}
+
+.envelope:after {
+   content: "";
    position: absolute;
    background-color: #ff9494;
-   width:360px;
-   height:225px;
-   left:-90px;
-   top:45px;
- }
- 
- .heart {
+   width: 22.5vw;
+   height: 14vw;
+   left: -6vw;
+   top: 3.5vw;
+}
+
+.heart {
    position: relative;
    background-color: #e01911;
    display: inline-block;
-   height: 180px;
-   top:50px;
-   left:0;
+   height: 11.25vw;
+   top: 2.5vw;
+   left: 0;
    transform: rotate(-45deg);
-   width:180px;
-   filter: drop-shadow(0 -10px 25px rgba(0,0,0,.3));
+   width: 11.25vw;
+   filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3));
    transition: .5s;
- }
-   
- .heart:before, .heart:after {
-   content:"";
+}
+
+.heart:before,
+.heart:after {
+   content: "";
    background-color: #e01911;
-   border-radius:50%;
-   height: 180px;
-   width: 180px;
+   border-radius: 50%;
+   height: 11.25vw;
+   width: 11.25vw;
    position: absolute;
-   }
-   
- .heart:before {
-   top:-100px;
-   left:0;}
-   
- .heart:after {
-   left:100px;
-   top:0;}
- 
- .front {
+}
+
+.heart:before {
+   top: -6.25vw;
+   left: 0;
+}
+
+.heart:after {
+   left: 6.25vw;
+   top: 0;
+}
+
+.front {
    position: absolute;
-   width:0;
-   height:0;
-   border-right: 190px solid #fbd2d2;
-   border-top: 113px solid transparent;
-   border-bottom: 113px solid transparent;
-   top:44px;
-   left:80px;
-   z-index:4;
- }
- 
- .front:before {
-   content:"";
+   width: 0;
+   height: 0;
+   border-right: 11.875vw solid #fbd2d2;
+   border-top: 7.0625vw solid transparent;
+   border-bottom: 7.0625vw solid transparent;
+   top: 2.75vw;
+   left: 5vw;
+   z-index: 4;
+}
+
+.front:before {
+   content: "";
    position: absolute;
-   width:0;
-   height:0;
-   border-left: 190px solid #fbd2d2;
-   border-top: 113px solid transparent;
-   border-bottom: 113px solid transparent;
-   top:-113px;
-   left:-170px;
- }
- 
- .front:after {
-   width:0;
-   height:0;
+   width: 0;
+   height: 0;
+   border-left: 11.875vw solid #fbd2d2;
+   border-top: 7.0625vw solid transparent;
+   border-bottom: 7.0625vw solid transparent;
+   top: -7.0625vw;
+   left: -10.625vw;
+}
+
+.front:after {
+   width: 0;
+   height: 0;
    position: absolute;
-   content:"";
-   border-bottom: 150px solid #fce7e9;
-   border-right:180px solid transparent;
-   border-left: 180px solid transparent;
-   top:-36px;
-   left:-170px;
- }
- 
- .text {
+   content: "";
+   border-bottom: 9.375vw solid #fce7e9;
+   border-right: 11.25vw solid transparent;
+   border-left: 11.25vw solid transparent;
+   top: -2.25vw;
+   left: -10.625vw;
+}
+
+.text {
    position: absolute;
    font-family: arial;
-   letter-spacing:5px;
+   letter-spacing: 0.3vw;
    text-align: center;
    color: white;
-   z-index:2;
-   top:80px;
-   left:15px;
+   z-index: 2;
+   top: 5vw;
+   left: 0.9375vw;
    transition: .5s;
- }
- 
- .valentines-day:hover .heart {
-   transform: translateY(-50px) rotate(-45deg);
- }
- 
- .valentines-day:hover .text {
-   transform: translateY(-50px);
- }
+}
+
+.valentines-day:hover .heart {
+   transform: translateY(-3.125vw) rotate(-45deg);
+}
+
+.valentines-day:hover .text {
+   transform: translateY(-3.125vw);
+}
