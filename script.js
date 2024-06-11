@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // Al cargar la página, ocultamos las cortinas
+    // Ocultar las cortinas al cargar la página
     $('.left-curtain').css('width', '0%');
     $('.right-curtain').css('width', '0%');
   
