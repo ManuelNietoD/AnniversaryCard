@@ -20,37 +20,41 @@ body {
    left: 25%;
    display: flex;
    visibility: hidden;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 10px;
 }
 
 #card h2 {
    font-size: 3em;
    margin: 0;
-   color: pink;
+   color: #ff66b2;
    text-align: center;
+   padding: 0.5em;
 }
 
 #card p {
-   font-size: 1.5em;
+   font-size: 1.2em;
    text-align: justify;
-   padding-left: 30px; /* Espacio en blanco a la izquierda */
-   padding-right: 30px; /* Espacio en blanco a la derecha */
+   padding: 1em;
 }
 
 .side {
-   background: #eee;
+   background: #fff;
    height: 100%;
    width: 50%;
    padding: 10px;
 }
 
 .side.one {
-   transform: skew(10deg, 20deg);
-   background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
+   background: linear-gradient(90deg, #fff, #ddd);
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
 }
 
 .side.two {
-   transform: skew(10deg, -15deg);
-   background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+   background: linear-gradient(-90deg, #fff, #f0f0f0);
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
 }
 
 .valentines-day {
@@ -66,8 +70,8 @@ body {
 .envelope:before {
    content: "";
    position: absolute;
-   width: 16vw;
-   height: 16vw;
+   width: 18vw;
+   height: 18vw;
    background-color: #ff9494;
    transform: rotate(-45deg);
    border-radius: 0 15px 0 0;
@@ -79,21 +83,21 @@ body {
    content: "";
    position: absolute;
    background-color: #ff9494;
-   width: 22.5vw;
-   height: 14vw;
+   width: 25vw;
+   height: 16vw;
    left: -6vw;
-   top: 3.5vw;
+   top: 4vw;
 }
 
 .heart {
    position: relative;
    background-color: #e01911;
    display: inline-block;
-   height: 11.25vw;
-   top: 2.5vw;
+   height: 13vw;
+   top: 3vw;
    left: 0;
    transform: rotate(-45deg);
-   width: 11.25vw;
+   width: 13vw;
    filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3));
    transition: .5s;
 }
@@ -103,18 +107,18 @@ body {
    content: "";
    background-color: #e01911;
    border-radius: 50%;
-   height: 11.25vw;
-   width: 11.25vw;
+   height: 13vw;
+   width: 13vw;
    position: absolute;
 }
 
 .heart:before {
-   top: -6.25vw;
+   top: -7vw;
    left: 0;
 }
 
 .heart:after {
-   left: 6.25vw;
+   left: 7vw;
    top: 0;
 }
 
@@ -122,11 +126,11 @@ body {
    position: absolute;
    width: 0;
    height: 0;
-   border-right: 11.875vw solid #fbd2d2;
-   border-top: 7.0625vw solid transparent;
-   border-bottom: 7.0625vw solid transparent;
-   top: 2.75vw;
-   left: 5vw;
+   border-right: 13vw solid #fbd2d2;
+   border-top: 8vw solid transparent;
+   border-bottom: 8vw solid transparent;
+   top: 3.5vw;
+   left: 6vw;
    z-index: 4;
 }
 
@@ -135,11 +139,11 @@ body {
    position: absolute;
    width: 0;
    height: 0;
-   border-left: 11.875vw solid #fbd2d2;
-   border-top: 7.0625vw solid transparent;
-   border-bottom: 7.0625vw solid transparent;
-   top: -7.0625vw;
-   left: -10.625vw;
+   border-left: 13vw solid #fbd2d2;
+   border-top: 8vw solid transparent;
+   border-bottom: 8vw solid transparent;
+   top: -8vw;
+   left: -12vw;
 }
 
 .front:after {
@@ -147,31 +151,31 @@ body {
    height: 0;
    position: absolute;
    content: "";
-   border-bottom: 9.375vw solid #fce7e9;
-   border-right: 11.25vw solid transparent;
-   border-left: 11.25vw solid transparent;
-   top: -2.25vw;
-   left: -10.625vw;
+   border-bottom: 10vw solid #fce7e9;
+   border-right: 12vw solid transparent;
+   border-left: 12vw solid transparent;
+   top: -2.5vw;
+   left: -12vw;
 }
 
 .text {
    position: absolute;
    font-family: arial;
-   letter-spacing: 0.3vw;
+   letter-spacing: 0.4vw;
    text-align: center;
    color: white;
    z-index: 2;
-   top: 5vw;
-   left: 0.9375vw;
+   top: 5.5vw;
+   left: 1.2vw;
    transition: .5s;
 }
 
 .valentines-day:hover .heart {
-   transform: translateY(-3.125vw) rotate(-45deg);
+   transform: translateY(-3.5vw) rotate(-45deg);
 }
 
 .valentines-day:hover .text {
-   transform: translateY(-3.125vw);
+   transform: translateY(-3.5vw);
 }
 
 @media (max-width: 600px) {
@@ -184,6 +188,6 @@ body {
       left: 5%;
    }
    #card p {
-      font-size: 1.2em; /* Ajustar tamaño de fuente en pantallas pequeñas */
+      font-size: 1em; /* Ajustar tamaño de fuente en pantallas pequeñas */
    }
 }
