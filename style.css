@@ -173,3 +173,17 @@ body {
 .valentines-day:hover .text {
    transform: translateY(-3.125vw);
 }
+
+@media (max-width: 600px) {
+   body {
+      font-size: 0.8rem; /* Reducir tamaño de fuente en pantallas pequeñas */
+   }
+   #card {
+      height: 80vh; /* Aumentar altura del contenedor en pantallas pequeñas */
+      width: 90vw; /* Aumentar ancho del contenedor en pantallas pequeñas */
+      left: 5%;
+   }
+   #card p {
+      font-size: 1.2em; /* Ajustar tamaño de fuente en pantallas pequeñas */
+   }
+}
